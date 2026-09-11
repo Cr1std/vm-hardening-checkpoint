@@ -1,8 +1,8 @@
-## Configuración de Red (Red Interna)
+## Configuración de Red (NAT)
 
-<img width="805" height="513" alt="Red cfg" src="https://github.com/user-attachments/assets/0408caf1-5b76-4ec2-b610-acfe97f5e36f" />
+<img width="878" height="585" alt="NAT" src="https://github.com/user-attachments/assets/baab2f7d-488b-446e-9c3e-83816e4fb485" />
 
-Elegí el modo Red Interna porque permite que la máquina virtual funcione en un entorno completamente aislado, sin conexión a mi red doméstica ni a internet. Esto simula un laboratorio controlado donde cualquier prueba o configuración riesgosa no puede afectar a mi equipo real (Host) ni a otros dispositivos de mi red. No usé el modo Bridged porque expondría la VM directamente en mi red física con una IP visible para todos los demás dispositivos, lo cual sería un riesgo innecesario para una práctica educativa.
+Configuré el adaptador de red de la máquina virtual en modo NAT. Con este modo, la VM tiene salida a internet, pero el tráfico pasa a través de una traducción de direcciones que gestiona VirtualBox — la VM no comparte la misma red que mi máquina real (Host) ni tiene una IP visible dentro de mi red doméstica. Esto significa que ningún dispositivo externo puede iniciar una conexión directa hacia la VM, protegiendo así a mi equipo real de cualquier prueba o configuración que se realice dentro del laboratorio.
 
 ## Usuario sin privilegios
 
